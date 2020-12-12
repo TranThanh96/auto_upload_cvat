@@ -1,0 +1,773 @@
+[
+    {
+        "name": "TS-Biển hết hạn chế tốc độ",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Hết giới hạn tốc độ 20",
+                    "Hết giới hạn tốc độ 30",
+                    "Hết giới hạn tốc độ 40",
+                    "Hết giới hạn tốc độ 50",
+                    "Hết giới hạn tốc độ 60",
+                    "Hết giới hạn tốc độ 70",
+                    "Hết giới hạn tốc độ 80",
+                    "Hết giới hạn tốc độ 90",
+                    "Hết giới hạn tốc độ 100",
+                    "Hết giới hạn tốc độ 120",
+                    "Hết giới hạn tốc độ đêm",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt chấm vuông-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt chấm vuông-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt liền-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt liền-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền đứt-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền đứt-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt đôi-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt đôi-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền đôi-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền đôi-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt đoạn-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch đứt đoạn-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền-vàng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "LD-Vạch liền-trắng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-other",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Vạch cũ",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Giữ khoảng cách an toàn",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Cảnh báo đường sắt cắt ngang",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-gờ giảm tốc",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Khu vực đỗ xe",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Điểm dừng xe buýt",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Cảnh báo đường người đi bộ cắt ngang",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Nhường đường ưu tiên",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Dừng xe",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Kênh hóa làn đường",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Cấm dừng xe",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-làn-ô tô",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Làn-mô tô",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Làn-xe đạp",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Chữ",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-other",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-quay đầu",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-thẳng trái phải",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi Tên-trái và phải",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-trái và phải",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-thẳng và phải",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-thẳng và trái",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-phải",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-trái",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Mũi tên-thẳng",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "RM-Người đi bộ sang đường",
+        "attributes": [
+            {
+                "name": "group",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "không",
+                    "có"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "FS-obstacle",
+        "attributes": []
+    },
+    {
+        "name": "FS-road",
+        "attributes": []
+    },
+    {
+        "name": "TS-Các loại biển khác",
+        "attributes": []
+    },
+    {
+        "name": "TS-Biển chỉ dẫn",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Đường dành cho ô tô",
+                    "Đường dành cho ô tô và mô tô",
+                    "Hết đường dành cho ô tô",
+                    "Hết đường dành cho ô tô và mô tô",
+                    "Đường người đi bộ",
+                    "Bắt đầu đường ưu tiên",
+                    "Hết đoạn đường ưu tiên",
+                    "Bắt đầu khu đông dân cư",
+                    "Hết khu đông dân cư",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TS-Biển hiệu lệnh",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Hướng đi phải phải theo",
+                    "Hướng đi trái phải theo",
+                    "Chỉ được đi thẳng",
+                    "Chỉ được rẽ phải",
+                    "Chỉ được rẽ trái",
+                    "Đường cho người đi bộ",
+                    "Đi theo vòng xuyến",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TS-Biển nguy hiểm",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Người đi bộ cắt ngang",
+                    "Trẻ em",
+                    "Giao lộ",
+                    "Chỗ ngoặt nguy hiểm",
+                    "Đường hẹp",
+                    "Đường trơn",
+                    "Đoạn đường hay xảy ra tai nạn",
+                    "Đi chậm",
+                    "Giao cắt với đường sắt không có rào chắn",
+                    "Chỗ đường sắt cắt đường bộ",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TS-Biển hạn chế tốc độ",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Tốc độ tối đa 20",
+                    "Tốc độ tối đa 30",
+                    "Tốc độ tối đa 40",
+                    "Tốc độ tối đa 50",
+                    "Tốc độ tối đa 60",
+                    "Tốc độ tối đa 70",
+                    "Tốc độ tối đa 80",
+                    "Tốc độ tối đa 90",
+                    "Tốc độ tối đa 100",
+                    "Tốc độ tối đa 120",
+                    "Tốc độ tối đa ban đêm",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TS-Biển cấm",
+        "attributes": [
+            {
+                "name": "name",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Cấm đi ngược chiều",
+                    "Cấm dừng đỗ",
+                    "Cấm đỗ",
+                    "Stop",
+                    "Đường cấm",
+                    "Cấm rẽ trái",
+                    "Cấm rẽ phải",
+                    "Cấm đi thẳng",
+                    "Cấm quay đầu",
+                    "Cấm quay đầu và rẽ trái",
+                    "Cấm ô tô",
+                    "Cấm ô tô rẽ trái",
+                    "Cấm ô tô rẽ phải",
+                    "Cấm ô tô quay đầu",
+                    "Cấm ô tô và mô tô",
+                    "Cấm vượt",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Traffic light",
+        "attributes": [
+            {
+                "name": "Direction",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Left",
+                    "Right",
+                    "Forward",
+                    "other"
+                ]
+            },
+            {
+                "name": "Type",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Round",
+                    "Arrow",
+                    "Number",
+                    "Pedestrian",
+                    "other"
+                ]
+            },
+            {
+                "name": "Color",
+                "input_type": "select",
+                "mutable": false,
+                "values": [
+                    "Green",
+                    "Yellow",
+                    "Red",
+                    "other"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Unlabeled",
+        "attributes": []
+    }
+]

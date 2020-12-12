@@ -1,0 +1,1 @@
+python cli.py --auth moderator:#Cvat@1920 --server-host camera.cvat.bigdataz.dev --https True ls
