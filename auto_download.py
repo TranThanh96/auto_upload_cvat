@@ -11,12 +11,13 @@ from tqdm import tqdm
 import sys
 
 file_list_download = sys.argv[1]
+user, _, password = sys.argv[2].partition(':')
 
 def download_anno(id_task):
 
     path = 'https://camera.cvat.bigdataz.dev/api/v1/tasks/{}/annotations?format=CVAT%20for%20images%201.1&filename=doanxem.zip&action=download'.format(id_task)
-    username = 'moderator'
-    password = '#Cvat@1920'
+    username = user
+    password = password
 
     for i in range(10):
         res = requests.get(path, auth=HTTPBasicAuth(username, password))

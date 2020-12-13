@@ -24,7 +24,6 @@ class CLI():
         self.api = api
         self.session = session
         self.login(credentials)
-        self.image_dir = args.dir
 
     def tasks_data(self, task_id, resource_type, resources):
         """ Add local, remote, or shared files to an existing task. """
@@ -32,7 +31,7 @@ class CLI():
         data = {}
         files = None
         if resource_type == ResourceType.LOCAL:
-            img_paths = glob('{}/*'.format(self.image_dir))
+            img_paths = glob('{}/*'.format(self.args.dir))
             files = {'client_files[{}]'.format(i): open(f, 'rb') for i, f in enumerate(img_paths)}
         elif resource_type == ResourceType.REMOTE:
             data = {'remote_files[{}]'.format(i): f for i, f in enumerate(resources)}
@@ -49,13 +48,24 @@ class CLI():
         response = self.session.get(url)
         response.raise_for_status()
         page = 1
+        lookup_table_name = {}
         while True:
             response_json = response.json()
             for r in response_json['results']:
-                if use_json_output:
-                    log.info(json.dumps(r, indent=4))
-                else:
-                    log.info('{id},{name},{status}'.format(**r))
+                id_task, name_task = r['id'], r['name']
+
+                # if name_task already exist -> duplicate name_task
+                if name_task in lookup_table_name.keys():
+                    print('>>>>> duplicate name task: {} - id: {} and {}'.format(name_task, id_task, lookup_table_name[name_task]))
+
+                lookup_table_name[name_task] = id_task
+                with open('lookup_table_name.json', 'w') as outfile:
+                    json.dump(lookup_table_name, outfile, indent=4, sort_keys=True)
+                # if use_json_output:
+                #     log.info(json.dumps(r, indent=4))
+                # else:
+                #     print('id: {} | name {} | stastus {}'.format(r['id'], r['name'], r['status']))
+                #     log.info('{id},{name},{status}'.format(**r))
             if not response_json['next']:
                 return
             page += 1
@@ -63,19 +73,30 @@ class CLI():
             response = self.session.get(url)
             response.raise_for_status()
 
+
+
     def tasks_create(self, name, labels, overlap, segment_size, bug, resource_type, resources,
                      annotation_path='', annotation_format='CVAT XML 1.1',
                      completion_verification_period=20, **kwargs):
         """ Create a new task with the given name and labels JSON and
         add the files to it. """
         url = self.api.tasks
-        name_task = self.image_dir.split('/')[-1]
+        print(name)
+        if name is not None:
+            name_task = name
+        else:
+            name_task = [d for d in self.args.dir.split('/') if d != ''][-1]
+
         data = {'name': name_task,
                 'labels': labels,
                 'overlap': overlap,
                 'segment_size': segment_size,
                 'bug_tracker': bug,
         }
+        if self.args.assignee is not None:
+            data['assignee'] = self.args.assignee
+        # if True:
+        #     return
         response = self.session.post(url, json=data)
         response.raise_for_status()
         response_json = response.json()

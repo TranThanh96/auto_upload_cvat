@@ -18,7 +18,7 @@ def get_auth(s):
 def parse_label_arg(s):
     """ If s is a file load it as JSON, otherwise parse s as JSON."""
     if os.path.exists(s):
-        fp = open(s, 'r')
+        fp = open(s, 'r', encoding='utf8')
         return json.load(fp)
     else:
         return json.loads(s)
@@ -102,7 +102,7 @@ task_create_parser = task_subparser.add_parser(
     description='Create a new CVAT task.'
 )
 task_create_parser.add_argument(
-    'name',
+    '--name',
     type=str,
     help='name of the task'
 )
@@ -111,6 +111,11 @@ task_create_parser.add_argument(
     default='[]',
     type=parse_label_arg,
     help='string or file containing JSON labels specification'
+)
+task_create_parser.add_argument(
+    '--assignee',
+    type=int,
+    help='id assignee'
 )
 task_create_parser.add_argument(
     '--overlap',
@@ -131,14 +136,14 @@ task_create_parser.add_argument(
     help='bug tracker URL'
 )
 task_create_parser.add_argument(
-    'resource_type',
+    '--resource_type',
     default='local',
     choices=list(ResourceType),
     type=ResourceType.argparse,
     help='type of files specified'
 )
 task_create_parser.add_argument(
-    'resources',
+    '--resources',
     type=str,
     help='list of paths or URLs',
     nargs='+'
