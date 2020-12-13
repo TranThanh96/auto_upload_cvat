@@ -32,5 +32,5 @@ Toàn bộ file xml sẽ được lưu theo tên task trong folder download
 ## Delete task
 Updating...
 
-## Delete annotation
+## Update annotation
 Updating...
