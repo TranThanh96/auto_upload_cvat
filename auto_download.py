@@ -13,11 +13,9 @@ import sys
 file_list_download = sys.argv[1]
 user, _, password = sys.argv[2].partition(':')
 
-def download_anno(id_task):
+def download_anno(id_task, username=user, password=password):
 
     path = 'https://camera.cvat.bigdataz.dev/api/v1/tasks/{}/annotations?format=CVAT%20for%20images%201.1&filename=doanxem.zip&action=download'.format(id_task)
-    username = user
-    password = password
 
     for i in range(10):
         res = requests.get(path, auth=HTTPBasicAuth(username, password))
@@ -47,7 +45,7 @@ for name in tbar:
     if name in availabel_names:
         id_task = name_mapping_id[name]
         tbar.set_description('downloading: {} - {}'.format(id_task, name))
-        xml = download_anno(id_task)
+        xml = download_anno(id_task, user, password)
         if xml is not None:
             with open('{}/{}.xml'.format(save_dir, name), 'wb') as f:
                 f.write(xml)
