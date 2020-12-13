@@ -81,7 +81,6 @@ class CLI():
         """ Create a new task with the given name and labels JSON and
         add the files to it. """
         url = self.api.tasks
-        print(name)
         if name is not None:
             name_task = name
         else:
