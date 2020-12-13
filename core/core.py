@@ -73,7 +73,29 @@ class CLI():
             response = self.session.get(url)
             response.raise_for_status()
 
+    def tasks_update_label(self, **kwargs):
+        # url = self.api.tasks
+        # print('> update label',url)
+        # url = self.api.tasks + '/480'
 
+        # res = self.session.get(url)
+        # body = res.json()
+        # anno = [
+        #     {
+        #         'name': 'Unlabeled',
+        #         'attributes': []
+        #     }
+        # ]
+        # self.session.headers['content-type'] = 'application/json'
+        # self.session.headers['accept'] = 'application/json'
+        # body = {
+        #     'name': body['name']
+        # }
+        # body['labels'] = anno
+        # print(body)
+        # res = self.session.put(url, data=json.dumps(body))
+        # print(res.json())
+        return
 
     def tasks_create(self, name, labels, overlap, segment_size, bug, resource_type, resources,
                      annotation_path='', annotation_format='CVAT XML 1.1',

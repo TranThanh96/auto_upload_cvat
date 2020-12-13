@@ -296,3 +296,18 @@ upload_parser.add_argument(
     default='CVAT 1.1',
     help='annotation format (default: %(default)s)'
 )
+
+#######################################################################
+# update annotation
+#######################################################################
+
+delete_parser = task_subparser.add_parser(
+    'update_label',
+    description='update label a CVAT task.'
+)
+# delete_parser.add_argument(
+#     'task_ids',
+#     type=int,
+#     help='list of task IDs',
+#     nargs='+'
+# )
