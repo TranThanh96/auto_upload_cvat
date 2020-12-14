@@ -35,7 +35,17 @@ python auto_download.py list_name_download.txt username:password
 
 
 ## Delete task
-Updating...
+Liệt kê toàn bộ các task cần delete theo từng dòng trong file list_name_delete.txt
+
+update danh sách các task và ID tương ứng:
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https ls
+~~~
+
+delete toàn bộ task được liệt kê trong list_name_delete.txt
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https delete --file_list_task_name list_name_delete.txt 
+~~~
 
 ## Update annotation
 Liệt kê toàn bộ các task cần update label theo từng dòng trong file list_name_update.txt

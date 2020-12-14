@@ -190,7 +190,12 @@ delete_parser = task_subparser.add_parser(
     description='Delete a CVAT task.'
 )
 delete_parser.add_argument(
-    'task_ids',
+    '--file_list_task_name',
+    help='file txt contain list task need to update label'
+)
+
+delete_parser.add_argument(
+    '--task_ids',
     type=int,
     help='list of task IDs',
     nargs='+'

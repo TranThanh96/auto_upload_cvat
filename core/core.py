@@ -162,17 +162,45 @@ class CLI():
 
     def tasks_delete(self, task_ids, **kwargs):
         """ Delete a list of tasks, ignoring those which don't exist. """
-        for task_id in task_ids:
-            url = self.api.tasks_id(task_id)
-            response = self.session.delete(url)
-            try:
-                response.raise_for_status()
-                log.info('Task ID {} deleted'.format(task_id))
-            except requests.exceptions.HTTPError as e:
-                if response.status_code == 404:
-                    log.info('Task ID {} not found'.format(task_id))
+        
+        if self.args.file_list_task_name is not None:
+            with open(self.args.file_list_task_name, 'r') as f:
+                name_list = f.readlines()
+            with open('lookup_table_name.json') as json_file:
+                name_mapping_id = json.load(json_file)
+            availabel_names = name_mapping_id.keys()
+            tbar = tqdm(name_list)
+            for name in tbar:
+                name = name.strip()
+                if name in availabel_names:
+                    task_id = name_mapping_id[name]
+                    url = self.api.tasks_id(task_id)
+                    response = self.session.delete(url)
+                    try:
+                        response.raise_for_status()
+                        log.info('Task ID {} deleted'.format(task_id))
+                    except requests.exceptions.HTTPError as e:
+                        if response.status_code == 404:
+                            log.info('Task ID {} not found'.format(task_id))
+                        else:
+                            raise e
+                
                 else:
-                    raise e
+                    print('not found: ', name)
+
+        else:
+
+            for task_id in task_ids:
+                url = self.api.tasks_id(task_id)
+                response = self.session.delete(url)
+                try:
+                    response.raise_for_status()
+                    log.info('Task ID {} deleted'.format(task_id))
+                except requests.exceptions.HTTPError as e:
+                    if response.status_code == 404:
+                        log.info('Task ID {} not found'.format(task_id))
+                    else:
+                        raise e
 
     def tasks_frame(self, task_id, frame_ids, outdir='', quality='original', **kwargs):
         """ Download the requested frame numbers for a task and save images as
