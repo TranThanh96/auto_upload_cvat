@@ -10,6 +10,7 @@ from io import BytesIO
 import mimetypes
 from time import sleep
 from glob import glob
+from tqdm import tqdm
 
 from PIL import Image
 
@@ -74,27 +75,32 @@ class CLI():
             response.raise_for_status()
 
     def tasks_update_label(self, **kwargs):
-        # url = self.api.tasks
-        # print('> update label',url)
-        # url = self.api.tasks + '/480'
 
-        # res = self.session.get(url)
-        # body = res.json()
-        # anno = [
-        #     {
-        #         'name': 'Unlabeled',
-        #         'attributes': []
-        #     }
-        # ]
-        # self.session.headers['content-type'] = 'application/json'
-        # self.session.headers['accept'] = 'application/json'
-        # body = {
-        #     'name': body['name']
-        # }
-        # body['labels'] = anno
-        # print(body)
-        # res = self.session.put(url, data=json.dumps(body))
-        # print(res.json())
+        with open('lookup_table_name.json') as json_file:
+            name_mapping_id = json.load(json_file)
+        availabel_names = name_mapping_id.keys()
+
+        assert os.path.isfile(self.args.file_list_task_name)
+        with open(self.args.file_list_task_name, 'r') as f:
+            name_list = f.readlines()
+        new_label = self.args.labels
+        self.session.headers['content-type'] = 'application/json'
+        self.session.headers['accept'] = 'application/json'
+
+        tbar = tqdm(name_list)
+        body = {
+            'labels': new_label
+        }
+
+        for name in tbar:
+            name = name.strip()
+            if name in availabel_names:
+                id_task = name_mapping_id[name]
+                url = '{}/{}'.format(self.api.tasks, id_task)
+                res = self.session.patch(url, data=json.dumps(body))
+            
+            else:
+                print('not found: ', name)
         return
 
     def tasks_create(self, name, labels, overlap, segment_size, bug, resource_type, resources,

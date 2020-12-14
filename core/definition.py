@@ -301,9 +301,19 @@ upload_parser.add_argument(
 # update annotation
 #######################################################################
 
-delete_parser = task_subparser.add_parser(
+update_label_parser = task_subparser.add_parser(
     'update_label',
     description='update label a CVAT task.'
+)
+update_label_parser.add_argument(
+    '--labels',
+    default='[]',
+    type=parse_label_arg,
+    help='string or file containing JSON labels specification'
+)
+update_label_parser.add_argument(
+    '--file_list_task_name',
+    help='file txt contain list task need to update label'
 )
 # delete_parser.add_argument(
 #     'task_ids',

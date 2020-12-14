@@ -38,4 +38,14 @@ python auto_download.py list_name_download.txt username:password
 Updating...
 
 ## Update annotation
-Updating...
+Liệt kê toàn bộ các task cần update label theo từng dòng trong file list_name_update.txt
+
+update danh sách các task và ID tương ứng:
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https ls
+~~~
+
+Dump label cho toàn bộ task được liệt kê trong list_name_update.txt
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https update_label --labels label.json --file_list_task_name list_name_update.txt 
+~~~
