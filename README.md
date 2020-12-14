@@ -23,11 +23,16 @@ python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --
 ## Dump annotation
 Liệt kê toàn bộ các task cần dump annotation theo từng dòng trong file list_name_download.txt
 
+update danh sách các task và ID tương ứng:
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https ls
+~~~
+
+Dump annotation, Toàn bộ file xml sẽ được lưu theo tên task trong folder download
 ~~~
 python auto_download.py list_name_download.txt username:password
 ~~~
 
-Toàn bộ file xml sẽ được lưu theo tên task trong folder download
 
 ## Delete task
 Updating...
