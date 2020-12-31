@@ -160,6 +160,20 @@ class CLI():
 
             self.tasks_upload(task_id, annotation_format, annotation_path, **kwargs)
 
+    def tasks_update_anno(self, dir, annotation_format, **kwargs):
+        xml_names = os.listdir(dir)
+        with open('lookup_table_name.json') as json_file:
+            mapping = json.load(json_file)
+        tbar = tqdm(xml_names)
+        for xml_name in tbar:
+            tbar.set_description("uploading {}".format(xml_name))
+            task_id = mapping[xml_name[:-4]]
+            annotation_path = os.path.join(dir, xml_name)
+            self.tasks_upload(task_id, annotation_format, annotation_path, **kwargs)
+
+        return
+
+
     def tasks_delete(self, task_ids, **kwargs):
         """ Delete a list of tasks, ignoring those which don't exist. """
         

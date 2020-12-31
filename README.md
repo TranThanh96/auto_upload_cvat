@@ -17,7 +17,7 @@ Tạo task và upload ảnh lên server. Một số tham số cần lưu ý:
 * --name: tên task, nếu không cung cấp, tên task tự động lấy theo tên folder
 
 ~~~
-python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https create --labels label.json --resource_type local --dir temp/ --assignee 3 --name temp
+python cli.py --auth moderator:#Cvat@1920 --server-host camera.cvat.bigdataz.dev --https create --labels label.json --resource_type local --dir temp/ --assignee 3 --name temp --annotation_path a.xml
 ~~~
 
 ## Dump annotation
@@ -47,7 +47,7 @@ delete toàn bộ task được liệt kê trong list_name_delete.txt
 python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https delete --file_list_task_name list_name_delete.txt 
 ~~~
 
-## Update annotation
+## Update label
 Liệt kê toàn bộ các task cần update label theo từng dòng trong file list_name_update.txt
 
 update danh sách các task và ID tương ứng:
@@ -59,3 +59,18 @@ Dump label cho toàn bộ task được liệt kê trong list_name_update.txt
 ~~~
 python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https update_label --labels label.json --file_list_task_name list_name_update.txt 
 ~~~
+
+## update annotation
+Tạo folder chứa toàn bộ các file xml trùng tên với tên task cần upload.
+
+update danh sách các task và ID tương ứng:
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https ls
+~~~
+
+upload xml
+
+~~~
+python cli.py --auth username:password --server-host camera.cvat.bigdataz.dev --https update_anno --dir ./temp
+~~~
+

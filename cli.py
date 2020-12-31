@@ -25,7 +25,9 @@ def main():
                'frames': CLI.tasks_frame,
                'dump': CLI.tasks_dump,
                'upload': CLI.tasks_upload,
-               'update_label': CLI.tasks_update_label}
+               'update_label': CLI.tasks_update_label,
+               'update_anno': CLI.tasks_update_anno,
+               }
     args = parser.parse_args()
     config_log(args.loglevel)
     with requests.Session() as session:

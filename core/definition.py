@@ -181,6 +181,29 @@ task_create_parser.add_argument(
             if data compression finished (necessary before uploading annotations)'''
 )
 
+
+#######################################################################
+# update_anno
+#######################################################################
+task_update_anno_parser = task_subparser.add_parser(
+    'update_anno',
+    description='task_update_anno_parser.'
+)
+
+task_update_anno_parser.add_argument(
+    '--dir',
+    help='path to dir contained xmls'
+)
+
+task_update_anno_parser.add_argument(
+    '--annotation_format',
+    default='CVAT 1.1',
+    type=str,
+    help='format of the annotation file being uploaded, e.g. CVAT 1.1'
+)
+
+
+
 #######################################################################
 # Delete
 #######################################################################
